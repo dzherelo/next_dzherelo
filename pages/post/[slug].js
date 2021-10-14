@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { getSinglePost, getPosts } from '../../lib/api';
 
 export default function Post({post}) {
