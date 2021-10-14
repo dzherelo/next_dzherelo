@@ -1,4 +1,4 @@
-import { getSinglePost, getPosts } from '../../lib/posts';
+import { getSinglePost, getPosts } from '../../lib/api';
 
 export default function Post({post}) {
   return (
