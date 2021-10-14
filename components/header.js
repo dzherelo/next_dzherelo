@@ -14,6 +14,15 @@ export default function Header({navigation}){
                         </a>
                     </Link>
                 </div>
+                <nav>
+                    <ul>
+                        {navigation.map(nav => (
+                            <li key={nav.slug}>
+                                <Link href={`page/[slug].js`} as={`page/${nav.slug}`}/>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
             </div>
         </header>
     )
