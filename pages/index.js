@@ -1,22 +1,21 @@
-import { getAllPosts, getSettings } from '../lib/api';
+import Header  from '../components/Header';
+import { getSettings } from '../lib/api';
 
-export default function Home({settings, posts}){
+export default function Home({settings}){
   // TODO: Locale detection and switching 👇
   // const router = useRouter();
   // const { locale, locales, defaultLocale } = router;
-
   return(
-    <div>
-      <h1>{settings.title}</h1>
-    </div>
+    <>
+      <Header nav={settings.navigation} path="/"/>
+    </>
   )
 }
 
 export async function getStaticProps(context){
   const settings = await getSettings();
-  const posts = await getAllPosts();
   
-  if (!settings || !posts){
+  if (!settings){
     return{
       notFound: true,
     }
@@ -24,8 +23,7 @@ export async function getStaticProps(context){
 
   return{
     props:{
-      settings,
-      posts
+      settings
     }
   }
 }
