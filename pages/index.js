@@ -1,5 +1,4 @@
 import { getAllPosts, getSettings } from '../lib/api';
-import { useRouter } from 'next/router';
 
 export default function Home({settings, posts}){
   // TODO: Locale detection and switching 👇
