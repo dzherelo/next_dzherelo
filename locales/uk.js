@@ -1,3 +1,5 @@
+import ucf from '../public/ucf/uk.svg'
+
 export default  {
     home: "головна",
     exhibitions: "виставки",
@@ -14,6 +16,8 @@ export default  {
     support: "підтримати",
     art: "робота",
     
-    copywrite: "павільйон джерело © ",
-    supported_by: "за підтримки"
+    siteTitle: "павільйон джерело",
+    supportedBy: "за підтримки",
+    ucf: "Український Культурний Фонд",
+    ucfImgPath: '/ucf/uk.svg'
 }

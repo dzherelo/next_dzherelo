@@ -1,17 +1,23 @@
-import { getSettings } from '../lib/api';
+import { getAllPosts } from '../lib/api';
 
-export default function Home({settings}){
+export default function Home({posts}){
   return(
     <>
-      
+    <ul>
+      {posts.map(post => (
+        <a href={post.slug}>
+          <li>{post.title}</li> 
+        </a>
+      ))}
+    </ul>
     </>
   )
 }
 
 export async function getStaticProps(context){
-  const settings = await getSettings();
+  const posts = await getAllPosts();
   
-  if (!settings){
+  if (!posts){
     return{
       notFound: true,
     }
@@ -19,7 +25,7 @@ export async function getStaticProps(context){
 
   return{
     props:{
-      settings
+      posts
     }
   }
 }

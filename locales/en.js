@@ -5,5 +5,10 @@ export default{
     blog: "blog",
 
     about: "about us",
-    contacts: "contacts"
+    contacts: "contacts",
+    
+    siteTitle: "dzherelo pavilion",
+    supportedBy: "supported by",
+    ucf: "Український Культурний Фонд",
+    ucfImgPath: '/ucf/uk.svg'
 }
