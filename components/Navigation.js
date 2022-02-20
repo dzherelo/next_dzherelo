@@ -17,16 +17,16 @@ const Navigation = () => {
         <>
         <nav className="lg:flex md:flex sm:hidden hidden lg:pt-6 lg:pb-4 md:pt-6 md:pb-4 sm:py-4 py-4 font-light text-xs justify-between">
             <ul className="flex justify-start gap-4">
-                    <a href="/">
+                    <a href={locale === 'uk' ? "/" : '/en'}>
                         <li className="uppercase">{t.home}</li>
                     </a>
-                    <a href="/exhibitions">
+                    <a href={locale === 'uk' ? "/exhibitions" : '/exhibitions-en'}>
                         <li className="uppercase">{t.exhibitions}</li>
                     </a>
-                    <a href="/exhibitions">
+                    <a href={locale === 'uk' ? "/artists" : '/artists-en'}>
                         <li className="uppercase">{t.artists}</li>
                     </a>
-                    <a href="/exhibitions">
+                    <a href={locale === 'uk' ? "/blog" : '/blog-en'}>
                         <li className="uppercase">{t.blog}</li>
                     </a>
             </ul>

@@ -1,14 +1,17 @@
-import { getAllPosts } from '../lib/api';
+import { useRouter } from "next/router";
+import { getAllPosts, getAllEnPosts } from '../lib/api';
 
-export default function Home({posts}){
+export default function Home({posts, postsEn}){
+  const router = useRouter();
+  const { locale } = router;
+
+  const allPosts = posts.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
+  const allPostsEn = postsEn.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
+
   return(
     <>
     <ul>
-      {posts.map(post => (
-        <a href={post.slug}>
-          <li>{post.title}</li> 
-        </a>
-      ))}
+      { locale === 'uk' ? allPosts : allPostsEn }
     </ul>
     </>
   )
@@ -16,6 +19,7 @@ export default function Home({posts}){
 
 export async function getStaticProps(context){
   const posts = await getAllPosts();
+  const postsEn = await getAllEnPosts();
   
   if (!posts){
     return{
@@ -25,7 +29,9 @@ export async function getStaticProps(context){
 
   return{
     props:{
-      posts
+      posts,
+      postsEn
     }
   }
+  console.log(posts)
 }
