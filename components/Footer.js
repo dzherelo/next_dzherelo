@@ -20,7 +20,7 @@ const Footer = () => {
                     <span className="uppercase">{t.siteTitle} © {getCurrentYear()}</span>
                 </div>    
                 <div className="flex space-x-2 items-center">
-                    <p class="text-xs uppercase">{t.supportedBy}</p>
+                    <p className="text-xs uppercase">{t.supportedBy}</p>
                     <img src={t.ucfImgPath} alt={t.ucf} />
                 </div>
             </div>

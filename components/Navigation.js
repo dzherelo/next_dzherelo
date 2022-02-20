@@ -31,8 +31,8 @@ const Navigation = () => {
                     </a>
             </ul>
         </nav>
-        <nav class="lg:flex md:flex sm:hidden hidden lg:pt-6 lg:pb-4 md:pt-6 md:pb-4 sm:py-4 py-4 font-light text-xs justify-end">
-                <ul class="flex justify-between gap-4">
+        <nav className="lg:flex md:flex sm:hidden hidden lg:pt-6 lg:pb-4 md:pt-6 md:pb-4 sm:py-4 py-4 font-light text-xs justify-end">
+                <ul className="flex justify-between gap-4">
                     <li className="uppercase"><a href="/contacts">{t.contacts}</a></li>
                     <li className="uppercase"><a href="/about-dzherelo">{t.about}</a></li>
                     <select onChange={changeLanguage} defaultValue={locale} className="bg-transparent">
