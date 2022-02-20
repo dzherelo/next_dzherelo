@@ -33,5 +33,4 @@ export async function getStaticProps(context){
       postsEn
     }
   }
-  console.log(posts)
 }
