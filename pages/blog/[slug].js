@@ -1,4 +1,4 @@
-import { getSinglePost, getPosts } from '../../lib/api';
+import { getSinglePost, getAllPosts } from '../../lib/api';
 
 export default function Post({post}) {
   return (
@@ -10,7 +10,7 @@ export default function Post({post}) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getPosts()
+  const posts = await getAllPosts()
 
   const paths = posts.map((post) => ({
     params: { slug: post.slug },

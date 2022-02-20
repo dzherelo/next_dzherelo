@@ -10,7 +10,8 @@ const Navigation = () => {
 
     const changeLanguage = (e) =>{
         const locale = e.target.value;
-        router.push(router.pathname, router.asPath, { locale })
+        router.push(router.pathname, router.asPath, { locale });
+        
     };
 
     return(
@@ -20,21 +21,21 @@ const Navigation = () => {
                     <a href={locale === 'uk' ? "/" : '/en'}>
                         <li className="uppercase">{t.home}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/exhibitions" : '/exhibitions-en'}>
+                    <a href={locale === 'uk' ? "/exhibitions" : '/en/exhibitions-en'}>
                         <li className="uppercase">{t.exhibitions}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/artists" : '/artists-en'}>
+                    <a href={locale === 'uk' ? "/artists" : '/en/artists-en'}>
                         <li className="uppercase">{t.artists}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/blog" : '/blog-en'}>
+                    <a href={locale === 'uk' ? "/blog" : '/en/blog-en'}>
                         <li className="uppercase">{t.blog}</li>
                     </a>
             </ul>
         </nav>
         <nav className="lg:flex md:flex sm:hidden hidden lg:pt-6 lg:pb-4 md:pt-6 md:pb-4 sm:py-4 py-4 font-light text-xs justify-end">
                 <ul className="flex justify-between gap-4">
-                    <li className="uppercase"><a href="/contacts">{t.contacts}</a></li>
-                    <li className="uppercase"><a href="/about-dzherelo">{t.about}</a></li>
+                    <li className="uppercase"><a href={locale === 'uk' ? "/contacts" : '/en/contacts'}>{t.contacts}</a></li>
+                    <li className="uppercase"><a href={locale === 'uk' ? "/about" : '/en/about'}>{t.about}</a></li>
                     <select onChange={changeLanguage} defaultValue={locale} className="bg-transparent">
                         <option value="uk">УКР</option>
                         <option value="en">EN</option>
