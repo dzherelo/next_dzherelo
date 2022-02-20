@@ -4,7 +4,7 @@ export default function Post({post}) {
   return (
     <div>
       <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
   )
 }

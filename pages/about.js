@@ -7,7 +7,10 @@ const About = ({about, aboutEn}) => {
 
     return(
         <>
-            {locale === 'uk' ? <h1>{about.title}</h1> : <h1>{aboutEn.title}</h1> } 
+            <main>
+                {locale === 'uk' ? <h1>{about.title}</h1> : <h1>{aboutEn.title}</h1> } 
+                {locale === 'uk' ? <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: about.html }} /> : <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: aboutEn.html }} />}
+            </main>
         </>
     )
 }
@@ -15,7 +18,7 @@ const About = ({about, aboutEn}) => {
 export default About;
 
 export async function getStaticProps(context){
-    const about = await getSinglePage("about");
+    const about = await getSinglePage('about');
     const aboutEn = await getSinglePage('about-en');
 
     if(!about || !aboutEn){

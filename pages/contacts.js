@@ -7,7 +7,10 @@ const Contacts = ({contacts, contactsEn}) => {
 
     return(
         <>
-            {locale === 'uk' ? <h1>{contacts.title}</h1> : <h1>{contactsEn.title}</h1> } 
+            <main>
+                {locale === 'uk' ? <h1>{contacts.title}</h1> : <h1>{contactsEn.title}</h1> }
+                {locale === 'uk' ? <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: contacts.html }} /> : <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: contactsEn.html }} />}
+            </main>
         </>
     )
 }
