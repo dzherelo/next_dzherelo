@@ -1,6 +1,10 @@
-import { getSinglePost, getAllPosts } from '../../lib/api';
+import { useRouter } from "next/router";
+import { getSinglePost, getAllPosts, getAllEnPosts } from '../../lib/api';
 
 export default function Post({post}) {
+  const router = useRouter();
+  const { locale } = router;
+
   return (
     <div>
       <h1>{post.title}</h1>
@@ -10,8 +14,8 @@ export default function Post({post}) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts()
-
+  const posts = await getAllPosts();
+  
   const paths = posts.map((post) => ({
     params: { slug: post.slug },
   }))

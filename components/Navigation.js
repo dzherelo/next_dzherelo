@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 
 import uk from '../locales/uk';
 import en from '../locales/en';
+import { route } from "next/dist/server/router";
 
 const Navigation = () => {
     const router = useRouter();
@@ -18,16 +19,16 @@ const Navigation = () => {
         <>
         <nav className="lg:flex md:flex sm:hidden hidden lg:pt-6 lg:pb-4 md:pt-6 md:pb-4 sm:py-4 py-4 font-light text-xs justify-between">
             <ul className="flex justify-start gap-4">
-                    <a href={locale === 'uk' ? "/" : '/en'}>
+                    <a href={locale === 'uk' ? "/" : '/en'} className={route.route === '/' ? 'bg-brand-green text-brand-background' : ''}>
                         <li className="uppercase">{t.home}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/exhibitions" : '/en/exhibitions-en'}>
+                    <a href={locale === 'uk' ? "/exhibitions" : '/en/exhibitions'} className={route.route === '/exhibitions' ? 'bg-brand-green text-brand-background' : ''}>
                         <li className="uppercase">{t.exhibitions}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/artists" : '/en/artists-en'}>
+                    <a href={locale === 'uk' ? "/artists" : '/en/artists'} className={route.route === '/artists' ? 'bg-brand-green text-brand-background' : ''}>
                         <li className="uppercase">{t.artists}</li>
                     </a>
-                    <a href={locale === 'uk' ? "/blog" : '/en/blog-en'}>
+                    <a href={locale === 'uk' ? "/blog" : '/en/blog'} className={route.route === '/blog' ? 'bg-brand-green text-brand-background' : ''}>
                         <li className="uppercase">{t.blog}</li>
                     </a>
             </ul>
