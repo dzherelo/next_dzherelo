@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Title from "../components/Title";
 import { getSinglePage } from "../lib/api";
 
 const About = ({about, aboutEn}) => {
@@ -8,7 +9,7 @@ const About = ({about, aboutEn}) => {
     return(
         <>
             <main>
-                {locale === 'uk' ? <h1>{about.title}</h1> : <h1>{aboutEn.title}</h1> } 
+                {locale === 'uk' ? <Title input={about.title} /> : <Title input={aboutEn.title} /> } 
                 {locale === 'uk' ? <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: about.html }} /> : <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: aboutEn.html }} />}
             </main>
         </>

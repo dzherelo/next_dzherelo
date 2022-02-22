@@ -5,8 +5,8 @@ export default function Home({posts, postsEn}){
   const router = useRouter();
   const { locale } = router;
 
-  const allPosts = posts.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
-  const allPostsEn = postsEn.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
+  // const allPosts = posts.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
+  // const allPostsEn = postsEn.map(post => ( <a href={post.slug}><li>{post.title}</li></a> ))
 
   return(
     <>

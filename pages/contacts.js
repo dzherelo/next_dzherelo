@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Title from "../components/Title";
 import { getSinglePage } from "../lib/api";
 
 const Contacts = ({contacts, contactsEn}) => {
@@ -8,7 +9,7 @@ const Contacts = ({contacts, contactsEn}) => {
     return(
         <>
             <main>
-                {locale === 'uk' ? <h1>{contacts.title}</h1> : <h1>{contactsEn.title}</h1> }
+                {locale === 'uk' ? <Title input={contacts.title} /> : <Title input={contactsEn.title} /> }
                 {locale === 'uk' ? <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: contacts.html }} /> : <section className='gh-content gh-canvas container' dangerouslySetInnerHTML={{ __html: contactsEn.html }} />}
             </main>
         </>

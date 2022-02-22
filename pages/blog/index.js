@@ -1,19 +1,39 @@
 import { useRouter } from "next/router";
+
+import BigPostCard from "../../components/PostCard/Big";
 import { getAllPosts, getAllEnPosts } from '../../lib/api';
 
 export default function Blog({posts, postsEn}){
   const router = useRouter();
   const { locale } = router;
+  const options = {year:'2-digit', month:'long', day:'numeric'};
 
-  const allPosts = posts.map(post => ( <a href={`/blog/${post.slug}`}><li>{post.title}</li></a> ))
-  const allPostsEn = postsEn.map(post => ( <a href={`/en/blog/${post.slug}`}><li>{post.title}</li></a> ))
+  const allPostsCards = posts.map(post =>( 
+    <BigPostCard 
+                  slug={ post.slug }
+                  imgUrl={ post.feature_image } 
+                  title={ post.title }
+                  excerpt={ post.excerpt }
+                  publishedAt={ new Intl.DateTimeFormat(locale, options).format(new Date(post.published_at)) }
+                  readingTime={ "1m to read" }
+    />
+  ))
+
+  const allPostsCardsEn = postsEn.map(post =>( 
+    <BigPostCard 
+                  slug={ post.slug }
+                  imgUrl={ post.feature_image } 
+                  title={ post.title }
+                  excerpt={ post.excerpt }
+                  publishedAt={ new Intl.DateTimeFormat(locale, options).format(new Date(post.published_at)) }
+                  readingTime={ "1m to read" }
+    />
+  ))
 
   return(
-    <>
-    <ul>
-      { locale === 'uk' ? allPosts : allPostsEn }
-    </ul>
-    </>
+    <div className="grid lg:grid-cols-1 lg:mx-64 grid-cols-1 gap-10 my-24 mx-0">
+      { locale === 'uk' ? allPostsCards : allPostsCardsEn }
+    </div>
   )
 }
 
