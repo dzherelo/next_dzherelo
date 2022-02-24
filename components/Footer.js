@@ -13,7 +13,7 @@ const Footer = () => {
     }
 
     return(
-        <footer className="py-2 text-xs">
+        <footer className="text-xs">
             <hr className="border-brand-green w-full"/>
             <div className="flex justify-between items-center py-4">
                 <div className="flex items-center justify-between">

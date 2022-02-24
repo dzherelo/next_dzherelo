@@ -1,7 +1,7 @@
 export default function Big({ slug, imgUrl, primaryTag, title, excerpt, publishedAt, readingTime, additionalStyles}){
     return (
         <div className={additionalStyles + " group container relative overflow-hidden"}>
-            <a href={slug}>
+            <a href={`blog/${slug}`}>
                 <div className="relative">
                     <img 
                         className="w-full group-hover:z-0 group-hover:scale-125 transform-gpu ease-out transition duration-150"
