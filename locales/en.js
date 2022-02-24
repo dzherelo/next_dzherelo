@@ -10,5 +10,10 @@ export default{
     siteTitle: "dzherelo pavilion",
     supportedBy: "supported by",
     ucf: "Український Культурний Фонд",
-    ucfImgPath: '/ucf/uk.svg'
+    ucfImgPath: '/ucf/uk.svg',
+
+    findDzherelo: "Dzherelo on Google Maps:",
+    toDzherelo: "to dzherelo",
+    featured: "featured",
+    support: "Support Dzherelo today!"
 }

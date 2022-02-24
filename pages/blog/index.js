@@ -31,7 +31,7 @@ export default function Blog({posts, postsEn}){
   ))
 
   return(
-    <div className="grid lg:grid-cols-1 lg:mx-64 grid-cols-1 gap-10 my-24 mx-0">
+    <div className="grid lg:grid-cols-1 lg:mx-64 grid-cols-1 gap-24 my-12 mx-0">
       { locale === 'uk' ? allPostsCards : allPostsCardsEn }
     </div>
   )

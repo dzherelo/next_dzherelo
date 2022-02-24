@@ -19,5 +19,10 @@ export default  {
     siteTitle: "павільйон джерело",
     supportedBy: "за підтримки",
     ucf: "Український Культурний Фонд",
-    ucfImgPath: '/ucf/uk.svg'
+    ucfImgPath: '/ucf/uk.svg',
+
+    findDzherelo: "Дістатися Джерела:",
+    toDzherelo: "до джерела",
+    featured: "останні новини",
+    support: "Підтримати Джерело сьогодні!"
 }
