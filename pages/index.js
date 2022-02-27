@@ -48,7 +48,7 @@ export default function Home({ feature,featureEn }){
         { locale === 'uk' ? featuredPost : featuredPostEn }
         <div className="lg:block hidden border border-brand-green "></div>
         <div className="lg:w-1/2 w-full lg:ml-16 ml-0">
-          <h1 className="uppercase text-3xl mb-6">{ t.findDzherelo }</h1>
+          <h1 className="uppercase text-center text-3xl mb-6">{ t.findDzherelo }</h1>
           <iframe className="w-full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2540.6766868715763!2d30.5142672!3d50.4471226!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4cf68249798fb%3A0xfb0cb56a64765e9c!2sDZHERELO!5e0!3m2!1sen!2sua!4v1636010483105!5m2!1sen!2sua" width="300" height="300" allowfullscreen="" loading="lazy"></iframe>
           <Button linkPath={ t.locationLink } target={ "_blank" }>{t.toDzherelo}</Button>
         </div>
